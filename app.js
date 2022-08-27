@@ -355,3 +355,52 @@
 // console.log(convertToBoolean([500, 0 ,"bob","", []]))
 
 
+
+
+//hard challenges
+
+//q2
+
+
+// function sortLowToHigh(numbers){
+
+//     return numbers.sort((a, b) => a-b)
+// }
+
+// console.log(sortLowToHigh([1, 560, 5, 0, 10, 4]))
+
+
+
+//q3
+
+// function sortHighToLow(numbers){
+//     return numbers.sort((a,b) => {
+//         return b.price-a.price
+//     });
+// }
+
+
+
+
+
+
+// console.log(sortHighToLow([
+//     {id: 1, price: 50},
+//     {id: 2, price :0},
+//     {id: 3, price :500},
+// ]))
+
+
+
+
+//Q5 Find all the posts by a single user using async await
+
+async function postsByUser(userId){
+    const promise = await fetch("https://jsonplaceholder.typicode.com/posts")
+    const result = await promise.json()
+
+    const posts = result.filter(element => element.userId ===userId)
+    console.log(posts)
+}
+
+postsByUser(6);
